@@ -438,7 +438,7 @@ void VirtualFenceMakerGL::setFenceShader()
 	FenceShader.setShader( vertex_source, fragment_source );
 }
 
-void VirtualFenceMakerGL::setGroundObject()
+void VirtualFenceMakerGL::setFenceObject()
 {
 	const glm::vec3 fence_color = { 0.5f, 0.125f, 0.9f };
 	vector<glm::vec3> fence_vertices;
@@ -450,7 +450,7 @@ void VirtualFenceMakerGL::setGroundObject()
 	Fence.setObject( GL_TRIANGLE_FAN, fence_color, fence_vertices );
 }
 
-void VirtualFenceMakerGL::setFenceObject()
+void VirtualFenceMakerGL::setGroundObject()
 {
 	const glm::vec3 ground_color = { 0.0f, 1.0f, 0.0f };
 	const vector<glm::vec3> ground_vertices = {
