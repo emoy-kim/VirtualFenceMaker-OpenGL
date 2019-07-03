@@ -63,7 +63,7 @@ void ObjectGL::prepareTexture2DFromFile(const string& file_name) const
 {
    const FREE_IMAGE_FORMAT format = FreeImage_GetFileType( file_name.c_str(), 0 );
    FIBITMAP* texture = FreeImage_Load( format, file_name.c_str() );
-   const int n_bits_per_pixel = FreeImage_GetBPP( texture );
+   const uint n_bits_per_pixel = FreeImage_GetBPP( texture );
    
    FIBITMAP* texture_32bit;
    if (n_bits_per_pixel == 32) {
@@ -73,8 +73,8 @@ void ObjectGL::prepareTexture2DFromFile(const string& file_name) const
       texture_32bit = FreeImage_ConvertTo32Bits( texture );
    }
 
-   const int width = FreeImage_GetWidth( texture_32bit );
-   const int height = FreeImage_GetHeight( texture_32bit );
+   const uint width = FreeImage_GetWidth( texture_32bit );
+   const uint height = FreeImage_GetHeight( texture_32bit );
    GLvoid* data = FreeImage_GetBits( texture_32bit );
    glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_BGRA, GL_UNSIGNED_BYTE, data );
    
@@ -230,7 +230,7 @@ void VirtualFenceMakerGL::setCamera(
    MainCamera.ViewMatrix = lookAt( MainCamera.CameraPosition, glm::vec3(viewing_point), glm::vec3(up_vector) );
 
    const auto fovy = 2.0f * atan( static_cast<float>(height) / (2.0f * focal_length) );
-   const auto aspect_ratio = static_cast<float>(width) / height;
+   const auto aspect_ratio = static_cast<float>(width) / static_cast<float>(height);
    MainCamera.ProjectionMatrix = glm::perspective( fovy, aspect_ratio, 1.0f, 10000.0f );
 
    FenceMask = Mat::zeros(height, width, CV_8UC1);
