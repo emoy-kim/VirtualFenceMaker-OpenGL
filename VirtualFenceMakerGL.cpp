@@ -398,7 +398,7 @@ void VirtualFenceMakerGL::registerCallbacks() const
 void VirtualFenceMakerGL::setGroundShader()
 {
    const GLchar* const vertex_source = {
-      "#version 330                                             \n"
+      "#version 460                                             \n"
       "uniform mat4 ModelViewProjectionMatrix;                  \n"
       "uniform vec3 PrimitiveColor;                             \n"
       "layout (location = 0) in vec4 v_position;                \n"
@@ -412,7 +412,7 @@ void VirtualFenceMakerGL::setGroundShader()
       "}                                                        \n"
    };
    const GLchar* const fragment_source = {
-      "#version 330                                       \n"
+      "#version 460                                       \n"
       "uniform sampler2D BaseTexture;                     \n"
       "in vec4 color;                                     \n"
       "in vec2 tex_coord;                                 \n"
@@ -428,7 +428,7 @@ void VirtualFenceMakerGL::setGroundShader()
 void VirtualFenceMakerGL::setFenceShader()
 {
    const GLchar* const vertex_source = {
-      "#version 330                                             \n"
+      "#version 460                                             \n"
       "uniform mat4 ModelViewProjectionMatrix;                  \n"
       "uniform vec3 PrimitiveColor;                             \n"
       "layout (location = 0) in vec4 v_position;                \n"
@@ -439,7 +439,7 @@ void VirtualFenceMakerGL::setFenceShader()
       "}                                                        \n"
    };
    const GLchar* const fragment_source = {
-      "#version 330                                \n"
+      "#version 460                                \n"
       "in vec4 color;                              \n"
       "layout (location = 0) out vec4 final_color; \n"
       "void main(void) {                           \n"
