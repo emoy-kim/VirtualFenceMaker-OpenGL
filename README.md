@@ -6,15 +6,6 @@
   
 
   
-## Test Environment
-  * Windows 10
-  * Visual Studio 2017
-  * Surface Book 2
-  
-## Library Dependencies
-  * OpenCV
-  * OpenGL
-
 ## Keyboard Commands
   * **c key**: capture only fence mask
   * **r key**: render only fence mask
