@@ -227,7 +227,7 @@ void VirtualFenceMakerGL::setCamera(
    const glm::vec4 up_vector = MainCamera.ToWorldCoordinate * glm::vec4(0.0f, -1.0f, 0.0f, 0.0f);
    MainCamera.ViewMatrix = lookAt( MainCamera.CameraPosition, glm::vec3(viewing_point), glm::vec3(up_vector) );
 
-   const auto fovy = 2.0f * atan( static_cast<float>(height) / (2.0f * focal_length) );
+   const auto fovy = 2.0f * atanf( static_cast<float>(height) / (2.0f * focal_length) );
    const auto aspect_ratio = static_cast<float>(width) / static_cast<float>(height);
    MainCamera.ProjectionMatrix = glm::perspective( fovy, aspect_ratio, 1.0f, 10000.0f );
 

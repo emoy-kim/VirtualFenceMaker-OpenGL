@@ -1,5 +1,5 @@
 target_link_libraries(
-     SlideProjector
+     VirtualFenceMakerGL
         glad
         glfw3
         pthread
